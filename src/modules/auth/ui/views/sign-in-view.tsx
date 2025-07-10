@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
 
+import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -51,11 +52,34 @@ const SignInView = () => {
       {
         email: data.email,
         password: data.password,
+        callbackURL: "/"
       },
       {
         onSuccess: () => {
           setPending(false);
           router.push("/");
+        },
+        onError: ({ error }) => {
+          setPending(false);
+          setError(error.message);
+        }
+      }
+    );
+  }
+
+  const onSocial = (provider: "github" | "google") => {
+    setError(null);
+    setPending(true);
+
+     authClient.signIn.social(
+      {
+        provider: provider,
+        callbackURL: "/"
+      },
+      {
+        onSuccess: () => {
+          setPending(false);
+          // router.push("/");
         },
         onError: ({ error }) => {
           setPending(false);
@@ -138,11 +162,33 @@ const SignInView = () => {
                   </span>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
-                  <Button variant="outline" className="w-full" type="button" disabled={pending}>
-                    Google
+                  <Button
+                    variant="outline"  
+                    className="w-full" 
+                    type="button" 
+                    disabled={pending}
+                    // onClick={() => {
+                    //   authClient.signIn.social({
+                    //     provider: "google",
+                    //   })
+                    // }}
+                    onClick={() => { onSocial("google") }}
+                  >
+                    < FaGoogle />
                   </Button>
-                  <Button variant="outline" className="w-full" type="button" disabled={pending}>
-                    GithHub
+                  <Button 
+                    variant="outline"  
+                    className="w-full" 
+                    type="button" 
+                    disabled={pending}
+                    // onClick={() => {
+                    //   authClient.signIn.social({
+                    //     provider: "github",
+                    //   })
+                    // }}
+                    onClick={() => { onSocial("github") }}
+                    >
+                      <FaGithub />
                   </Button>
                 </div>
                 <div className="text-center text-sm">

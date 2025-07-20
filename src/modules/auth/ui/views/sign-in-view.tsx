@@ -115,7 +115,7 @@ const SignInView = () => {
                       <FormControl>
                         <Input 
                           type="email"
-                          placeholder="antonio@exmaple.com"
+                          placeholder="demo@exmaple.com"
                           {...field}
                         />
                       </FormControl>

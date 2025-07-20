@@ -1,4 +1,6 @@
 import { ResponsiveDialoge } from "@/components/responsive-dialog";
+import { AgentForm } from "./agents-form";
+import { fa } from "zod/v4/locales";
 
 interface NewAgentDialogeProps {
     open: boolean;
@@ -16,7 +18,10 @@ export const NewAgentDialog = ({
         open={open}
         onOpenChange={onOpenChange}
         >
-            New agent form
+            <AgentForm 
+            onSuccess={() => onOpenChange(false)}
+            onCancel={() => onOpenChange(false)}
+            />
         </ResponsiveDialoge>
     )
 }

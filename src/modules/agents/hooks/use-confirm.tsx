@@ -25,21 +25,21 @@ export const useConfirm = (
         handleClose();
     }
 
-    const handleCnacel = () => {
+    const handleCancel = () => {
         promise?.resolve(false);
         handleClose();
     }
 
     const ConfirmationDialog = () => (
         <ResponsiveDialoge
-         open={Promise !== null}
+         open={promise !== null}
          onOpenChange={handleClose}
          title={title}
          description={description}
         >
             <div className="pt-4 w-full flex flex-col-reverse gap-y-2 lg:flex-row gap-x-2 items-center justify-end">
                 <Button
-                 onClick={handleCnacel}
+                 onClick={handleCancel}
                  variant="outline"
                  className="w-full lg:w-auto"
                 >

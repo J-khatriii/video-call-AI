@@ -11,7 +11,7 @@ export const agentsRouter = createTRPCRouter({
     update: protectedProcedure
      .input(agentsUpdateShema)
      .mutation(async ({ ctx, input }) => {
-        const [upadtedAgent] = await db
+        const [updatedAgent] = await db
          .update(agents)
          .set(input)
          .where(
@@ -22,13 +22,13 @@ export const agentsRouter = createTRPCRouter({
          )
          .returning()
 
-         if(!upadtedAgent){
+         if(!updatedAgent){
             throw new TRPCError({
                 code: "NOT_FOUND",
                 message: "Agent not found",
             })
          }
-        return upadtedAgent;
+        return updatedAgent;
 
      }),
     remove: protectedProcedure

@@ -42,11 +42,6 @@ export const AgentForm = ({
                     trpc.agents.getMany.queryOptions({}),
                 )
 
-                if(initialValues?.id){
-                    await queryClient.invalidateQueries(
-                        trpc.agents.getOne.queryOptions({ id: initialValues.id}),
-                    )
-                }
                 onSuccess?.();
             },
             onError: (error) => {
@@ -84,11 +79,11 @@ export const AgentForm = ({
     })
 
     const isEdit = !!initialValues?.id;
-    const isPending = createAgent.isPending;
+    const isPending = createAgent.isPending || updateAgent.isPending;
 
     const onSubmit = (values:z.infer<typeof agentsInsertSchema>) => {
         if(isEdit) {
-            console.log("TODO: UdateAgent");
+            updateAgent.mutate({ ...values, id: initialValues.id})
         }else {
             createAgent.mutate(values);
         }
@@ -122,7 +117,7 @@ export const AgentForm = ({
                     <FormItem>
                         <FormLabel>Instructions</FormLabel>
                         <FormControl>
-                            <Textarea {...field} placeholder="You are helpful math assitent that can answer questions and help with tasks." />
+                            <Textarea {...field} placeholder="You are helpful math assistant that can answer questions and help with tasks." />
                         </FormControl>
                         <FormMessage />
                     </FormItem>

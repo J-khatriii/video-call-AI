@@ -7,7 +7,7 @@ import { and, count, desc, eq, getTableColumns, ilike, sql } from "drizzle-orm";
 import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE, MAX_PAGE_SIZE, MIN_PAGE_SIZE } from "@/constants";
 import { TRPCError } from "@trpc/server";
 
-export const agnetsRouter = createTRPCRouter({
+export const agentsRouter = createTRPCRouter({
     update: protectedProcedure
      .input(agentsUpdateShema)
      .mutation(async ({ ctx, input }) => {

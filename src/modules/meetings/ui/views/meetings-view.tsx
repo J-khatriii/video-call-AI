@@ -1,5 +1,6 @@
 "use client";
 
+import { DataTable } from "@/components/data-table";
 import { ErrorState } from "@/components/error-state";
 import { LoadingState } from "@/components/loading-state";
 import { useTRPC } from "@/trpc/client"
@@ -10,8 +11,8 @@ export const MeetingsView = () => {
     const { data } = useSuspenseQuery(trpc.meetings.getMany.queryOptions({}));
 
   return (
-    <div>
-      {JSON.stringify(data)}
+    <div className="overflow-x-scroll">
+      {/* <DataTable data={data.items}/> */}
     </div>
   )
 }
@@ -33,3 +34,5 @@ export const MeetingsViewError = () => {
         />
     )
 }
+
+//8.31.22  

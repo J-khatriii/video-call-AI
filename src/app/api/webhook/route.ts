@@ -61,7 +61,7 @@ export async function POST(req: NextRequest) {
                 )
             );
 
-         if(!existingMeeting){
+        if(!existingMeeting){
             return NextResponse.json({ error: "Meeting not found" }, { status: 404 });
         }
 

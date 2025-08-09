@@ -52,7 +52,7 @@ export const columns: ColumnDef<MeetingGetMany[number]>[] = [
                  className="size-4"
                 />
                 <span className="text-sm text-muted-foreground">
-                    {row.original.startedAt ? format(row.original.startedAt, "MM d"): ""}
+                    {row.original.startedAt ? format(row.original.startedAt, "MMMM d"): ""}
                 </span>
             </div>
         </div>

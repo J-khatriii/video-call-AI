@@ -9,7 +9,7 @@ import { ErrorBoundary } from "react-error-boundary";
 import { UpgradeView, UpgradeViewError, UpgradeViewLaoding } from "@/modules/premium/ui/views/upgrade-view";
 
 
-const page = async () => {
+const Page = async () => {
     const session = await auth.api.getSession({
         headers: await headers(),
     })
@@ -37,4 +37,4 @@ const page = async () => {
   )
 }
 
-export default page;
+export default Page;

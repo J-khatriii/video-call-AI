@@ -91,7 +91,6 @@ export async function POST(req: NextRequest) {
         }
 
         const call = streamVideo.video.call("default", meetingId);
-        await call.create();
 
         const realTimeClient = await streamVideo.video.connectOpenAi({
             call,

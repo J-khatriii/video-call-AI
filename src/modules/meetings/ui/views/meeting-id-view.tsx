@@ -41,12 +41,12 @@ export const MeetingIdView = ({ meetingId }: Props) => {
                 toast.error(error.message);
             },
         }),
-    )
+    );
     
     const [RemoveConfirmation, confirmRemove] = useConfirm(
         "Are you sure",
         `The following action will remove this meeting`,
-    )
+    );
 
     const handleRemoveMeeting = async () => {
         const ok = await confirmRemove();
@@ -54,7 +54,7 @@ export const MeetingIdView = ({ meetingId }: Props) => {
         if(!ok) return;
 
         await removeMeeting.mutateAsync({ id: meetingId });
-    }
+    };
 
     const isActive = data.status === "active";
     const isUpcoming = data.status === "upcoming";
@@ -90,7 +90,7 @@ export const MeetingIdView = ({ meetingId }: Props) => {
                 )}
             </div>
         </>
-    )
+    );
 }
 
 export const MeetingIdViewLoading = () => {
@@ -99,7 +99,7 @@ export const MeetingIdViewLoading = () => {
          title="Loading Meeting" 
          description="This may take a few seconds"
         />
-    )
+    );
 }
 
 export const MeetingIdViewError = () => {
@@ -108,5 +108,5 @@ export const MeetingIdViewError = () => {
          title="Failed to load Meeting"
          description="something went wrong"
         />
-    )
+    );
 }

@@ -42,4 +42,4 @@ export const columns: ColumnDef<AgentManyOne[number]>[] = [
         </Badge>
     )   
   }
-]
+];

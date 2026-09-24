@@ -16,5 +16,5 @@ export const LoadingState = ({ title, description }: Props) => {
                 </div>
             </div>
         </div>
-    )
+    );
 }

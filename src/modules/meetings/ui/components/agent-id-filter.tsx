@@ -18,7 +18,7 @@ export const AgentIdFilter = () => {
             pageSize: 100,
             search: agentSearch,
         }),
-    )
+    );
 
     return (
         <CommandSelect 
@@ -42,5 +42,5 @@ export const AgentIdFilter = () => {
             onSearch={setAgentSearch}
             value={filters.agentId ?? ""}
         />
-    )
+    );
 }

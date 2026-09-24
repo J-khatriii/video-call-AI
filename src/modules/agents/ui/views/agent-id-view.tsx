@@ -53,15 +53,18 @@ export const AgentIdView = ({ agentId }: Props) => {
         if(!ok) return;
 
         await removeAgent.mutateAsync({ id: agentId });
-    };
+    }
+
     return (
         <>
             <RemoveConfirmation />
+
             <UpdateAgentDialog
              open={updateAgentDialogOpen}
              onOpenChange={setUpdateAgentDialogOpen}
              initialValues={data}
             />
+            
             <div className="flex-1 py-4 px-4 md:px-8 flex flex-col gap-y-4">
                 <AgentIdViewHeader
                     agentId={agentId}
@@ -94,7 +97,7 @@ export const AgentIdView = ({ agentId }: Props) => {
                 </div>
             </div>
         </>
-    )
+    );
 }
 
 export const AgentIdViewLaoding = () => {
@@ -103,7 +106,7 @@ export const AgentIdViewLaoding = () => {
          title="Loading Agent" 
          description="This may take a few seconds"
         />
-    )
+    );
 }
 
 export const AgentIdViewError = () => {
@@ -112,5 +115,5 @@ export const AgentIdViewError = () => {
          title="Failed to load agent"
          description="something went wrong"
         />
-    )
+    );
 }

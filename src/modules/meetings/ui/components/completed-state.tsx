@@ -24,7 +24,7 @@ interface Props {
     data: MeetingGetOne;
 }
 
-export const CompletedState = ({data} : Props) => {
+export const CompletedState = ({ data } : Props) => {
     return (
         <div className= "flex flex-col gap-y-4">
             <Tabs defaultValue="summary">
@@ -159,5 +159,5 @@ export const CompletedState = ({data} : Props) => {
                 </TabsContent>
             </Tabs>
         </div>
-    )
+    );
 }

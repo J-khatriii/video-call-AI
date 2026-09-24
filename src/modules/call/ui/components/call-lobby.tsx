@@ -36,7 +36,7 @@ const DisabledVideoPreview = () => {
                 } as StreamVideoParticipant
             }
         />
-    )
+    );
 }
 
 const AllowBrowserPermissions = () => {
@@ -44,7 +44,7 @@ const AllowBrowserPermissions = () => {
         <p className="text-sm">
             Please grant your browser a permission to access your camera and microphone.
         </p>
-    )
+    );
 }
 
 export const CallLobby = ({ onJoin} : Props) => {
@@ -88,5 +88,5 @@ export const CallLobby = ({ onJoin} : Props) => {
                 </div>
             </div>
         </div>
-    )
+    );
 }

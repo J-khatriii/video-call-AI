@@ -22,7 +22,7 @@ interface ChatUIProps {
     userId: string;
     userName: string;
     userImage: string | undefined;
-};
+}
 
 export const ChatUI = ({
     meetingId,
@@ -64,7 +64,7 @@ export const ChatUI = ({
                 title="Loading chat"
                 description="This may take a few seconds"
             />
-        )
+        );
     }
 
     return (
@@ -81,5 +81,5 @@ export const ChatUI = ({
                 </Channel>
             </Chat>
         </div>
-    )
+    );
 }

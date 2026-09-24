@@ -47,7 +47,7 @@ export const ResponsiveDialoge = ({
                     </div>
                 </DrawerContent>
             </Drawer>
-        )
+        );
     }
 
     return (
@@ -60,5 +60,5 @@ export const ResponsiveDialoge = ({
                 {children}
             </DialogContent>
         </Dialog>
-    )
+    );
 }

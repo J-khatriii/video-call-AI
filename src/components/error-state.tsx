@@ -16,5 +16,5 @@ export const ErrorState = ({ title, description }: Props) => {
                 </div>
             </div>
         </div>
-    )
+    );
 }

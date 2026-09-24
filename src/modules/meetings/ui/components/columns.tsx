@@ -95,4 +95,4 @@ export const columns: ColumnDef<MeetingGetMany[number]>[] = [
         </Badge>
     )
   }
-]
+];

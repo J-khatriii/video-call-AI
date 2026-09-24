@@ -75,5 +75,5 @@ export const StatusFilter = () => {
             onSelect={(value) => setFilters({ status: value as MeetingStatus })}
             value={filters.status ?? ""}
         />
-    )
+    );
 }

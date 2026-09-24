@@ -21,5 +21,5 @@ export const CallEnded = () => {
                 </div>
             </div>
         </div>
-    )
+    );
 }

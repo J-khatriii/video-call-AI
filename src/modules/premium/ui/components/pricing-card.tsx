@@ -139,5 +139,5 @@ export const PricingCard = ({
                 </ul>
             </div>
         </div>
-    )
+    );
 }

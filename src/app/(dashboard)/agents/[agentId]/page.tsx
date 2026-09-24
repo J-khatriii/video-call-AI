@@ -5,11 +5,10 @@ import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 
 interface Props {
-    params: Promise<{ agentId: string }>
+    params: Promise<{ agentId: string }>;
 }
 
 //localhost:3000/agents/123
-
 
 const page = async ({ params }: Props) => {
     const { agentId } = await params;
@@ -17,7 +16,8 @@ const page = async ({ params }: Props) => {
     const queryClient = getQueryClient();
     void queryClient.prefetchQuery(
         trpc.agents.getOne.queryOptions({ id: agentId }),
-    )
+    );
+
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
         <Suspense fallback={<AgentIdViewLaoding/>}>
@@ -26,7 +26,7 @@ const page = async ({ params }: Props) => {
             </ErrorBoundary>
         </Suspense>
     </HydrationBoundary>
-  )
+  );
 }
 
-export default page
+export default page;

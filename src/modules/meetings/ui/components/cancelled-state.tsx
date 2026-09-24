@@ -9,5 +9,5 @@ export const CancelledState = () => {
                 description=" This meeting was cancelled"
             />
         </div>
-    )
+    );
 }

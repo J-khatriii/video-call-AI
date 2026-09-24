@@ -150,5 +150,5 @@ export const AgentForm = ({
                 </div>
             </form>
         </Form>
-    )
+    );
 }

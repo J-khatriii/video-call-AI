@@ -21,8 +21,8 @@ export const CallView = ({ meetingId }: Props) => {
                     description="You can no longer join this meeting"
                 />
             </div>
-        )
+        );
     }
 
-    return <CallProvider meetingId={meetingId} meetingName={data.name} />
+    return <CallProvider meetingId={meetingId} meetingName={data.name} />;
 }

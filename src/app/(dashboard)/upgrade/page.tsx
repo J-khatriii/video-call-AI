@@ -8,11 +8,10 @@ import { ErrorBoundary } from "react-error-boundary";
 
 import { UpgradeView, UpgradeViewError, UpgradeViewLaoding } from "@/modules/premium/ui/views/upgrade-view";
 
-
 const Page = async () => {
     const session = await auth.api.getSession({
         headers: await headers(),
-    })
+    });
       
     if(!session){
         redirect("/sign-in");
@@ -21,10 +20,10 @@ const Page = async () => {
     const queryClient = getQueryClient();
     void queryClient.prefetchQuery(
         trpc.premium.getCurrentSubscription.queryOptions(),
-    )
+    );
     void queryClient.prefetchQuery(
         trpc.premium.getProducts.queryOptions(),
-    )
+    );
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
@@ -34,7 +33,7 @@ const Page = async () => {
             </ErrorBoundary>
         </Suspense>
     </HydrationBoundary>
-  )
+  );
 }
 
 export default Page;

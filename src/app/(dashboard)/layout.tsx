@@ -3,10 +3,10 @@ import { DashboardNavbar } from "@/modules/dashboard/ui/components/dashboard-nav
 import { DashboardSidebar } from "@/modules/dashboard/ui/components/dashboard-sidebar";
 
 interface Props {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }
 
-const layout = ({children} : Props) => {
+const layout = ({ children } : Props) => {
   return (
     <SidebarProvider>
         <DashboardSidebar />
@@ -15,7 +15,7 @@ const layout = ({children} : Props) => {
         {children}
       </main>
     </SidebarProvider>
-  )
+  );
 }
 
-export default layout
+export default layout;

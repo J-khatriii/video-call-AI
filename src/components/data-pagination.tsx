@@ -32,4 +32,4 @@ export const DataPagination = ({ page, totalPages, onPageChange }: Props) => {
             </div>
         </div>
     );
-};
+}

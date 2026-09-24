@@ -7,6 +7,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+
 import {
   Drawer,
   DrawerClose,
@@ -92,7 +93,7 @@ export const DashboardUserButton = () => {
                     </DrawerFooter>
                 </DrawerContent>
             </Drawer>
-        )
+        );
     }
 
     return (
@@ -143,5 +144,5 @@ export const DashboardUserButton = () => {
                 </DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
-    )
+    );
 }

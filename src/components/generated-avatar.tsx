@@ -10,17 +10,13 @@ interface GeneratedAvatarProps {
     variant: "botttsNeutral" | "initials";
 }
 
-export const GeneratedAvatar = ({
-    seed,
-    className,
-    variant
-}:GeneratedAvatarProps) => {
+export const GeneratedAvatar = ({ seed, className, variant }:GeneratedAvatarProps) => {
     let avatar;
 
     if(variant === "botttsNeutral") {
         avatar = createAvatar(botttsNeutral, {
             seed,
-        })
+        });
     }else{
         avatar = createAvatar(initials, {
             seed,
@@ -34,5 +30,5 @@ export const GeneratedAvatar = ({
             <AvatarImage src={avatar.toDataUri()} alt='avatar' />
             <AvatarFallback>{seed.charAt(0).toUpperCase()}</AvatarFallback>
         </Avatar>
-    )
+    );
 }

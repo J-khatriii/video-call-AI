@@ -40,7 +40,7 @@ const page = async ({searchParams} : Props ) => {
         </Suspense>
       </HydrationBoundary>
     </>
-  )
+  );
 }
 
 export default page;

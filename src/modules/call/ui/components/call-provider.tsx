@@ -18,7 +18,7 @@ export const CallProvider = ({ meetingId, meetingName } : Props) => {
             <div className="flex h-screen items-center justify-center bg-radial from-sidebar-accent to-sidebar">
                 <LoaderIcon className="size-6 animate-spin text-white" />
             </div>
-        )
+        );
     }
 
     return (
@@ -29,5 +29,5 @@ export const CallProvider = ({ meetingId, meetingName } : Props) => {
             userName={data.user.name}
             userImage={data.user.image ?? generatedAvatarUrl({ seed: data.user.name, variant: "initials"})}
         />
-    )
+    );
 }

@@ -250,7 +250,7 @@ const SignUpView = () => {
         By clicking continue, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
       </div>
     </div>
-  )
+  );
 }
 
-export default SignUpView
+export default SignUpView;

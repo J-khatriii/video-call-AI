@@ -44,5 +44,5 @@ export const DashboardTrial = () => {
                 </Link>
             </Button>
         </div>
-    )
+    );
 }

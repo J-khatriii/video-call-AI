@@ -67,7 +67,7 @@ export const UpgradeView = () => {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export const UpgradeViewLaoding = () => {
@@ -76,7 +76,7 @@ export const UpgradeViewLaoding = () => {
          title="Loading" 
          description="This may take a few seconds"
         />
-    )
+    );
 }
 
 export const UpgradeViewError = () => {
@@ -85,5 +85,5 @@ export const UpgradeViewError = () => {
          title="Error"
         description="something went wrong"
         />
-    )
+    );
 }

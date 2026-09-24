@@ -8,7 +8,6 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
-
 import { Button } from "@/components/ui/button";
 
 import {
@@ -73,5 +72,5 @@ export const MeetingIdViewHeader = ({
                 </DropdownMenuContent>
             </DropdownMenu>
         </div>
-    )
+    );
 }

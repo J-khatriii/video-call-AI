@@ -1,9 +1,9 @@
 import { auth } from "@/lib/auth";
 import { MeetingsListHeader } from "@/modules/meetings/ui/components/meetings-list-header";
 import {
-   MeetingsView,
-   MeetingsViewError, 
-   MeetingsViewLaoding
+  MeetingsView,
+  MeetingsViewError, 
+  MeetingsViewLaoding
 } from "@/modules/meetings/ui/views/meetings-view"
 import { getQueryClient, trpc } from "@/trpc/server"
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
@@ -24,16 +24,16 @@ const Page = async ({ searchParams }: Props) => {
 
   const session = await auth.api.getSession({
     headers: await headers(),
-  })
+  });
     
   if(!session){
-    redirect("/sign-in")
+    redirect("/sign-in");
   }
 
   const queryClient = getQueryClient();
   void queryClient.prefetchQuery(
     trpc.meetings.getMany.queryOptions({ ...filters, })
-  )
+  );
 
   return (
     <>
@@ -46,7 +46,7 @@ const Page = async ({ searchParams }: Props) => {
       </Suspense>
     </HydrationBoundary>
     </>
-  )
+  );
 }
 
-export default Page
+export default Page;

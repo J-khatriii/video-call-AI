@@ -1,25 +1,27 @@
 "use client"
 
 import {
-     Sidebar,
-     SidebarContent,
-     SidebarFooter,
-     SidebarGroup,
-     SidebarGroupContent,
-     SidebarHeader,
-     SidebarMenu,
-     SidebarMenuButton,
-     SidebarMenuItem,     
+    Sidebar,
+    SidebarContent,
+    SidebarFooter,
+    SidebarGroup,
+    SidebarGroupContent,
+    SidebarHeader,
+    SidebarMenu,
+    SidebarMenuButton,
+    SidebarMenuItem,     
 } from "@/components/ui/sidebar";
 import { Separator } from "@/components/ui/separator";
+
 import { BotIcon, StarIcon, VideoIcon } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
-import { DashboardUserButton } from "./dashboard-user-button";
 
+import { cn } from "@/lib/utils";
+import { DashboardUserButton } from "./dashboard-user-button";
 import { DashboardTrial } from "./dashboard-trial";
+
 
 const firstSection = [
     {
@@ -32,7 +34,7 @@ const firstSection = [
         label: "Agents",
         href: "/agents",
     }
-]
+];
 
 const secondSection = [
     {
@@ -40,10 +42,11 @@ const secondSection = [
         label: "Upgrade",
         href: "/upgrade",
     }
-]
+];
 
 export const DashboardSidebar = () => {
     const pathname = usePathname();
+
   return (
     <Sidebar>
       <SidebarHeader className="text-sidebar-accent-foreground">
@@ -112,7 +115,7 @@ export const DashboardSidebar = () => {
         <DashboardUserButton />
       </SidebarFooter>
     </Sidebar>
-  )
+  );
 }
 
-export default DashboardSidebar
+export default DashboardSidebar;

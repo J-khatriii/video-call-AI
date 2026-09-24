@@ -190,5 +190,5 @@ export const MeetingForm = ({
                 </form>
             </Form>
         </>
-    )
+    );
 }

@@ -15,5 +15,5 @@ export const EmptyState = ({ title, description, image="/empty.svg" }: Props) =>
                 <p className="text-sm text-muted-foreground">{description}</p>
             </div>
         </div>
-    )
+    );
 }

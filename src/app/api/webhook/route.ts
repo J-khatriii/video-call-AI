@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
         return NextResponse.json(
             { error: "Missing signature in API key "},
             { status: 400 }
-        )
+        );
     }
 
     const body = await req.text();

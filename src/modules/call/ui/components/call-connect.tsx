@@ -13,8 +13,8 @@ import {
 } from "@stream-io/video-react-sdk";
 
 import { useTRPC } from "@/trpc/client";
-
 import "@stream-io/video-react-sdk/dist/css/styles.css";
+
 import { CallUI } from "./call-ui";
 
 interface Props {
@@ -48,7 +48,7 @@ export const CallConnect = ({
                 image: userImage,
             },
             tokenProvider: generatedToken,
-        })
+        });
 
         setClient(_client);
 
@@ -82,7 +82,7 @@ export const CallConnect = ({
             <div className="flex h-screen items-center justify-center bg-radial from-sidebar-accent to-sidebar">
                 <LoaderIcon className="size-6 animate-spin text-white" />
             </div>
-        )
+        );
     }
 
     return (
@@ -91,5 +91,5 @@ export const CallConnect = ({
                 <CallUI meetingName={meetingName} />
             </StreamCall>
         </StreamVideo>
-    )
+    );
 }

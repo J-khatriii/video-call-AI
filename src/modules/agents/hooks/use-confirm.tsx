@@ -1,59 +1,56 @@
-import { JSX, useState} from "react";
+import { JSX, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ResponsiveDialoge } from "@/components/responsive-dialog";
 
 export const useConfirm = (
-    title: string,
-    description: string,
+  title: string,
+  description: string,
 ): [() => JSX.Element, () => Promise<unknown>] => {
-    const [promise, setPromise] = useState<{
-        resolve: (value: boolean) => void;
-    } | null>(null);
+  const [promise, setPromise] = useState<{
+    resolve: (value: boolean) => void;
+  } | null>(null);
 
-    const confirm = () => {
-        return new Promise((resolve) => {
-            setPromise({ resolve });
-        })
-    }
+  const confirm = () => {
+    return new Promise((resolve) => {
+      setPromise({ resolve });
+    });
+  }
 
-    const handleClose = () => {
-        setPromise(null);
-    }
+  const handleClose = () => {
+    setPromise(null);
+  }
 
-    const handleConfirm = () => {
-        promise?.resolve(true);
-        handleClose();
-    }
+  const handleConfirm = () => {
+    promise?.resolve(true);
+    handleClose();
+  }
 
-    const handleCancel = () => {
-        promise?.resolve(false);
-        handleClose();
-    }
+  const handleCancel = () => {
+    promise?.resolve(false);
+    handleClose();
+  }
 
-    const ConfirmationDialog = () => (
-        <ResponsiveDialoge
-         open={promise !== null}
-         onOpenChange={handleClose}
-         title={title}
-         description={description}
+  const ConfirmationDialog = () => (
+    <ResponsiveDialoge
+      open={promise !== null}
+      onOpenChange={handleClose}
+      title={title}
+      description={description}
+    >
+      <div className="pt-4 w-full flex flex-col-reverse gap-y-2 lg:flex-row gap-x-2 items-center justify-end">
+        <Button
+          onClick={handleCancel}
+          variant="outline"
+          className="w-full lg:w-auto"
         >
-            <div className="pt-4 w-full flex flex-col-reverse gap-y-2 lg:flex-row gap-x-2 items-center justify-end">
-                <Button
-                 onClick={handleCancel}
-                 variant="outline"
-                 className="w-full lg:w-auto"
-                >
-                    Cancel
-                </Button>
-                <Button
-                 onClick={handleConfirm}
-                 className="w-full lg:w-auto"
-                >
-                    Confirm 
-                </Button>
-            </div>
-        </ResponsiveDialoge>
-    )
+          Cancel
+        </Button>
+        <Button onClick={handleConfirm} className="w-full lg:w-auto">
+          Confirm
+        </Button>
+      </div>
+    </ResponsiveDialoge>
+  );
 
-    return [ConfirmationDialog, confirm];
+  return [ConfirmationDialog, confirm];
 }

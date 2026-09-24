@@ -53,7 +53,7 @@ export const useConfirm = (
                 </Button>
             </div>
         </ResponsiveDialoge>
-    )
+    );
 
     return [ConfirmationDialog, confirm];
 }

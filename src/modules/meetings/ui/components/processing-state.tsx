@@ -9,5 +9,5 @@ export const ProcessingState = () => {
                 description="This meeting was completed, a summary will appear soon"
             />
         </div>
-    )
+    );
 }

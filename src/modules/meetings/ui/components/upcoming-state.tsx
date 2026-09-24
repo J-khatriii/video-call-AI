@@ -39,5 +39,5 @@ export const UpcomingState = ({
                 </Button>
             </div>
         </div>
-    )
+    );
 }

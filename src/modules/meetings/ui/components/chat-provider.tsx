@@ -7,7 +7,7 @@ import { ChatUI } from "./chat-ui";
 interface Props {
     meetingId: string;
     meetingName: string;
-};
+}
 
 export const ChatProvider = ({ meetingId, meetingName }: Props) => {
     const { data, isPending } = authClient.useSession();
@@ -18,7 +18,7 @@ export const ChatProvider = ({ meetingId, meetingName }: Props) => {
                 title="...Loading"
                 description="Please wait while we load the chat"
             />
-        )
+        );
     }
 
     return (
@@ -29,5 +29,5 @@ export const ChatProvider = ({ meetingId, meetingName }: Props) => {
             userName={data.user.name}
             userImage={data.user.image ?? ""}        
         />
-    )
-};
+    );
+}

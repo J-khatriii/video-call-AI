@@ -10,4 +10,4 @@ const Layout = ({ children } : Props) => {
   );
 }
 
-export default Layout
+export default Layout;

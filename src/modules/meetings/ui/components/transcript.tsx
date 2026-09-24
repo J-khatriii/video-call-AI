@@ -67,5 +67,5 @@ export const Transcript = ({meetingId}: Props) => {
                 </div>
             </ScrollArea>
         </div>
-    )
+    );
 }

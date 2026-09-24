@@ -73,5 +73,5 @@ export const AgentIdViewHeader = ({
                 </DropdownMenuContent>
             </DropdownMenu>
         </div>
-    )
+    );
 }

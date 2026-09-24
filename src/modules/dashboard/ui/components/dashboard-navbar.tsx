@@ -17,9 +17,11 @@ export const DashboardNavbar = () => {
                 setCommandOpen((open) => !open);
             }
         }
+        
         document.addEventListener("keydown", down);
         return () => document.removeEventListener("keydown", down);
-    }, [])
+    }, []);
+
     return (
         <>
         <DashboardCommand open={commandOpen} setOpen={setCommandOpen}/>
@@ -41,7 +43,7 @@ export const DashboardNavbar = () => {
             </Button>
         </nav>
         </>
-    )
+    );
 } 
 
-export default DashboardNavbar
+export default DashboardNavbar;

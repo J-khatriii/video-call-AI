@@ -51,7 +51,7 @@ export const AgentsView = () => {
                 />
             )}
         </div>
-    )
+    );
 }
 
 export const AgentsViewLaoding = () => {
@@ -60,7 +60,7 @@ export const AgentsViewLaoding = () => {
          title="Loading Agents" 
          description="This may take a few seconds"
         />
-    )
+    );
 }
 
 export const AgentsViewError = () => {
@@ -69,5 +69,5 @@ export const AgentsViewError = () => {
          title="Failed to load agents"
         description="something went wrong"
         />
-    )
+    );
 }

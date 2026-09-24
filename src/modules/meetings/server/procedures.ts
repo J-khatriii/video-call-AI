@@ -322,4 +322,4 @@ export const meetingsRouter = createTRPCRouter({
             totalPages,
         }
     }),
-})
+});

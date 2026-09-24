@@ -18,16 +18,16 @@ const page = async ({ params }: Props) => {
 
   const session = await auth.api.getSession({
     headers: await headers(),
-  })
+  });
     
   if(!session){
-    redirect("/sign-in")
+    redirect("/sign-in");
   }
 
   const queryClient = getQueryClient();
   void queryClient.prefetchQuery(
     trpc.meetings.getOne.queryOptions({ id: meetingId }),
-  )
+  );
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
@@ -37,7 +37,7 @@ const page = async ({ params }: Props) => {
         </ErrorBoundary>
       </Suspense>
     </HydrationBoundary>
-  )
+  );
 }
 
-export default page
+export default page;

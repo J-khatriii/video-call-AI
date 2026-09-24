@@ -21,6 +21,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -31,7 +32,6 @@ const formSchema = z.object({
 });
 
 const SignInView = () => {
-
   const router = useRouter();
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -212,7 +212,7 @@ const SignInView = () => {
         By clicking continue, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
       </div>
     </div>
-  )
+  );
 }
 
-export default SignInView
+export default SignInView;
